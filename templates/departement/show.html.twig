@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Departement{% endblock %}
+
+{% block body %}
+    <h1>Departement #{{ departement.id }}</h1>
+
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ departement.Name }}</td>
+            </tr>
+            <tr>
+                <th>Capacity</th>
+                <td>{{ departement.Capacity }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_departement_index') }}"><button type="button" class="btn btn-primary">back to list</button></a>
+    <a href="{{ path('app_departement_edit', {'id': departement.id}) }}"><button type="button" class="btn btn-primary">edit</button></a>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Student{% endblock %}
+
+{% block body %}
+    <h1>Student #{{ student.id }}</h1>
+
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <th>FirstName</th>
+                <td>{{ student.FirstName }}</td>
+            </tr>
+            <tr>
+                <th>LastName</th>
+                <td>{{ student.LastName }}</td>
+            </tr>
+            <tr>
+                <th>NumEtud</th>
+                <td>{{ student.NumEtud }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_student_index') }}"><button type="button" class="btn btn-primary">back to list</button></a>
+
+    <a href="{{ path('app_student_edit', {'id': student.id}) }}"><button type="button" class="btn btn-primary">edit</button></a>
+{% endblock %}
